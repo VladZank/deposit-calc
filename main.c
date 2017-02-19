@@ -2,18 +2,18 @@
 
 int main()
 {
-	int date, amount;
-	printf("Input date and amount:");
-	scanf("%d %d", &date, &amount);
+	int period, amount;
+	printf("Input period and amount:");
+	scanf("%d %d", &period, &amount);
 	if(amount>=10000)
 	{
-		if(date>=0)
+		if(period>=0)
 		{
 			
 		}
 		else
 		{
-			printf("Error: Incorrect date.\n");
+			printf("Error: Incorrect period.\n");
 		}
 	}
 	else
