@@ -7,7 +7,7 @@ int main()
 	scanf("%d %d", &date, &amount);
 	if(amount>=10000)
 	{
-		if(date>0)
+		if(date>=0)
 		{
 			
 		}
