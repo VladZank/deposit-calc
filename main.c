@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+void interest_income()
+{
+	
+}
+
 int main()
 {
 	int period, amount;
