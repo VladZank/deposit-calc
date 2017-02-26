@@ -53,6 +53,7 @@ int interest_income(int period, int amound)
 			iincome=(amound/(-10));
 		}
 	}
+	return iincome;
 }
 
 int main()
