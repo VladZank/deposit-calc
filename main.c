@@ -3,6 +3,14 @@
 int interest_income(int period, int amound)
 {
 	int iincome;
+	if(amound<=100000)
+	{
+		
+	}
+	else
+	{
+		
+	}
 }
 
 int main()
