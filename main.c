@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void interest_income(int period, int amound)
+int interest_income(int period, int amound)
 {
 	
 }
