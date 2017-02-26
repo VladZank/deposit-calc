@@ -2,7 +2,7 @@
 
 int interest_income(int period, int amound)
 {
-	
+	int iincome;
 }
 
 int main()
