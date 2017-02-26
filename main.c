@@ -11,21 +11,21 @@ int interest_income(int period, int amound)
 			{
 				if(period>240)
 				{
-					
+					iincome=(amound/100)*12;
 				}
 				else
 				{
-					
+					iincome=(amound/100)*6;
 				}
 			}
 			else
 			{
-				
+				iincome=(amound/100)*2;
 			}
 		}
 		else
 		{
-			
+			iincome=(amound/(-10));
 		}
 	}
 	else
@@ -36,21 +36,21 @@ int interest_income(int period, int amound)
 			{
 				if(period>240)
 				{
-					
+					iincome=(amound/100)*15;
 				}
 				else
 				{
-					
+					iincome=(amound/100)*8;
 				}
 			}
 			else
 			{
-				
+				iincome=(amound/100)*3;
 			}
 		}
 		else
 		{
-			
+			iincome=(amound/(-10));
 		}
 	}
 }
