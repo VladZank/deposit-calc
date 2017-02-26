@@ -5,11 +5,53 @@ int interest_income(int period, int amound)
 	int iincome;
 	if(amound<=100000)
 	{
-		
+		if(period>30)
+		{
+			if(period>120)
+			{
+				if(period>240)
+				{
+					
+				}
+				else
+				{
+					
+				}
+			}
+			else
+			{
+				
+			}
+		}
+		else
+		{
+			
+		}
 	}
 	else
 	{
-		
+		if(period>30)
+		{
+			if(period>120)
+			{
+				if(period>240)
+				{
+					
+				}
+				else
+				{
+					
+				}
+			}
+			else
+			{
+				
+			}
+		}
+		else
+		{
+			
+		}
 	}
 }
 
