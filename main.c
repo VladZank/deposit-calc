@@ -64,7 +64,14 @@ int main()
 	{
 		if(period>=0)
 		{
-			
+			if(period<=365)
+			{
+				
+			}
+			else
+			{
+				printf("Error: Incorrect period.\n");
+			}
 		}
 		else
 		{
