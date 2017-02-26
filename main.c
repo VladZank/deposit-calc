@@ -84,7 +84,14 @@ int main()
 		printf("Error: Incorrect amount");
 		if(period>=0)
 		{
-			printf(".\n");
+			if(period<=365)
+			{
+				printf(".\n");
+			}
+			else
+			{
+				printf(" and period.\n");
+			}
 		}
 		else
 		{
