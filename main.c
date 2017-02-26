@@ -18,7 +18,15 @@ int main()
 	}
 	else
 	{
-		printf("Error: Incorrect amount.\n");
+		printf("Error: Incorrect amount");
+		if(period>=0)
+		{
+			printf(".\n");
+		}
+		else
+		{
+			printf(" and period.\n");
+		}
 	}
 	return 0;
 }
