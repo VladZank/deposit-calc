@@ -1,5 +1,47 @@
 #include <stdio.h>
 
+int check(int period,int amound)
+{
+	if(amound>=10000)
+	{
+		if(period>=0)
+		{
+			if(period<=365)
+			{
+				return 0;
+			}
+			else
+			{
+				printf("Error: Incorrect period.\n");
+			}
+		}
+		else
+		{
+			printf("Error: Incorrect period.\n");
+		}
+	}
+	else
+	{
+		printf("Error: Incorrect amound");
+		if(period>=0)
+		{
+			if(period<=365)
+			{
+				printf(".\n");
+			}
+			else
+			{
+				printf(" and period.\n");
+			}
+		}
+		else
+		{
+			printf(" and period.\n");
+		}
+	}
+	return -1;
+}
+
 int interest_income(int period, int amound)
 {
 	int iincome;
@@ -58,45 +100,14 @@ int interest_income(int period, int amound)
 
 int main()
 {
-	int period, amount;
-	printf("Input period and amount:");
-	scanf("%d %d", &period, &amount);
-	if(amount>=10000)
+	int period, amound, iincome;
+	printf("Input period and amound:");
+	scanf("%d %d", &period, &amound);
+	if(check(period, amound))
 	{
-		if(period>=0)
-		{
-			if(period<=365)
-			{
-				
-			}
-			else
-			{
-				printf("Error: Incorrect period.\n");
-			}
-		}
-		else
-		{
-			printf("Error: Incorrect period.\n");
-		}
+		return 0;
 	}
-	else
-	{
-		printf("Error: Incorrect amount");
-		if(period>=0)
-		{
-			if(period<=365)
-			{
-				printf(".\n");
-			}
-			else
-			{
-				printf(" and period.\n");
-			}
-		}
-		else
-		{
-			printf(" and period.\n");
-		}
-	}
+	iincome=interest_income(period, amound);
+	printf("Interest income: %d\n", iincome);
 	return 0;
 }
