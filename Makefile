@@ -1,4 +1,6 @@
-depcalc:build/main.o build/functions.o
+.PHONY:all clean
+
+all:build/main.o build/functions.o
 	gcc  build/main.o build/functions.o -o bin/depcalc
 
 build/main.o:src/main.c
@@ -6,3 +8,6 @@ build/main.o:src/main.c
 
 build/functions.o:src/functions.c
 	gcc -Wall -Werror -c src/functions.c -o build/functions.o
+
+clean:
+	rm -rf build/*.o bin/*
