@@ -1,24 +1,31 @@
+prog := depcalc
+comp := gcc
+flags := -Wall -Werror
+tflags := -I thirdparty/ctest -Wall -Werror
+test/.o := build/test
+src/.o := build/src
+
 .PHONY:all clean test
 
-all:build/src/main.o build/src/functions.o
-	gcc  build/src/main.o build/src/functions.o -o bin/depcalc
+all:$(src/.o)/main.o $(src/.o)/functions.o
+	$(comp)  $(src/.o)/main.o $(src/.o)/functions.o -o bin/$(prog)
 
-build/src/main.o:src/main.c
-	gcc -Wall -Werror -c src/main.c -o build/src/main.o
+$(src/.o)/main.o:src/main.c
+	$(comp) $(flags) -c src/main.c -o $(src/.o)/main.o
 
-build/src/functions.o:src/functions.c
-	gcc -Wall -Werror -c src/functions.c -o build/src/functions.o
+$(src/.o)/functions.o:src/functions.c
+	$(comp) $(flags) -c src/functions.c -o $(src/.o)/functions.o
 
 test:deposit-calc-test
 
-deposit-calc-test:build/test/main.o build/test/functions.o
-	gcc build/test/main.o build/test/functions.o -o bin/deposit-calc-test
+deposit-calc-test:$(test/.o)/main.o $(test/.o)/functions.o
+	$(comp) $(test/.o)/main.o $(test/.o)/functions.o -o bin/$(prog)-test
 
-build/test/main.o:src/main.c
-	gcc -Wall -Werror -I thirdparty/ctest src -c src/main.c -o build/test/main.o
+$(test/.o)/main.o:src/main.c
+	$(comp) $(tflags) -c src/main.c -o $(test/.o)/main.o
 
-build/test/functions.o:src/functions.c
-	gcc -Wall -Werror -I thirdparty/ctest src -c src/functions.c -o build/test/functions.o
+$(test/.o)/functions.o:src/functions.c
+	$(comp) $(tflags) -c src/functions.c -o $(test/.o)/functions.o
 
 clean:
 	rm -rf build/test/*.o build/src/*.o bin/*
