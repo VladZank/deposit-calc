@@ -18,8 +18,8 @@ $(src/.o)/functions.o:src/functions.c
 
 test:deposit-calc-test
 
-deposit-calc-test:$(test/.o)/main.o $(test/.o)/depcalc_test.o
-	$(comp) $(test/.o)/main.o $(test/.o)/depcalc_test.o -o bin/$(prog)-test
+deposit-calc-test:$(test/.o)/main.o $(test/.o)/depcalc_test.o $(src/.o)/functions.o
+	$(comp) $(test/.o)/main.o $(test/.o)/depcalc_test.o $(src/.o)/functions.o -o bin/$(prog)-test
 
 $(test/.o)/main.o:test/main.c
 	$(comp) $(tflags) -c test/main.c -o $(test/.o)/main.o
