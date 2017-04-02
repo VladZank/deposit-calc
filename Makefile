@@ -1,7 +1,7 @@
 prog := depcalc
 comp := gcc
 flags := -Wall -Werror
-tflags := -I thirdparty/ctest -Wall -Werror
+tflags := -I src -I thirdparty/ctest -Wall -Werror
 test/.o := build/test
 src/.o := build/src
 
@@ -18,14 +18,14 @@ $(src/.o)/functions.o:src/functions.c
 
 test:deposit-calc-test
 
-deposit-calc-test:$(test/.o)/main.o $(test/.o)/functions.o
-	$(comp) $(test/.o)/main.o $(test/.o)/functions.o -o bin/$(prog)-test
+deposit-calc-test:$(test/.o)/main.o $(test/.o)/depcalc_test.o
+	$(comp) $(test/.o)/main.o $(test/.o)/depcalc_test.o -o bin/$(prog)-test
 
-$(test/.o)/main.o:src/main.c
-	$(comp) $(tflags) -c src/main.c -o $(test/.o)/main.o
+$(test/.o)/main.o:test/main.c
+	$(comp) $(tflags) -c test/main.c -o $(test/.o)/main.o
 
-$(test/.o)/functions.o:src/functions.c
-	$(comp) $(tflags) -c src/functions.c -o $(test/.o)/functions.o
+$(test/.o)/depcalc_test.o:test/depcalc_test.c
+	$(comp) $(tflags) -c test/depcalc_test.c -o $(test/.o)/depcalc_test.o
 
 clean:
 	rm -rf build/test/*.o build/src/*.o bin/*
